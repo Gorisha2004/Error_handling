@@ -1,4 +1,4 @@
-#CarSpeedChecker<br />
+# CarSpeedChecker<br />
 This Solidity program is a simple program to check the speed of a car. This is done using three error handling functions in smart contracts revert, require and assert.<br />
 
 **Description**<br />
@@ -64,6 +64,6 @@ contract CarSpeedChecker {
 <br />
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.7" (or another compatible version), and then click on the "Compile token.sol" button.<br />
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "CarSpeedChecker" contract from the dropdown menu, and then click on the "Deploy" button and run all the functions by passing values in it.<br />
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "CarSpeedChecker" contract from the dropdown menu, and then click on the "Deploy" button.<br />
 
 Once the contract is deployed, you can interact with it by calling the three functions. Pass the values in the function and call, you'll be able to see the desired output.
