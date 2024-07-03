@@ -3,7 +3,7 @@ This Solidity program is a simple program to check if one is eligible for a scol
 
 # Description
 <br />
-## **Features**<br />
+## Features<br />
 1. Checks if a student is eligible for merit based, sports or any of the scolarship.<br />
 2. Restrict access to the owner using a modifier.<br />
 3. Checks if marks are not negative.<br />
