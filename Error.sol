@@ -3,12 +3,22 @@ pragma solidity ^0.8.7;
 
 contract CarSpeedChecker {
     uint public speed;
+    address public owner;
 
     // Event to log speed changes
     event SpeedChanged(uint newSpeed);
 
     // Event to log when a speed check fails
     event SpeedCheckFailed(string message);
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not the contract owner");
+        _;
+    }
+
+    constructor(){
+        owner = msg.sender;
+    }
 
     // Function using require to check if the speed of car is less than 100
     function checkUsingRequire(uint _speed) public pure returns (string memory) {       
@@ -25,7 +35,7 @@ contract CarSpeedChecker {
     }
 
     // Function to set the speed and using assert to check internal invariants
-    function setSpeed(uint _speed) public {                
+    function setSpeed(uint _speed) public onlyOwner {                
         speed = _speed;
         emit SpeedChanged(speed);
 
