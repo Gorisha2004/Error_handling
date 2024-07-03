@@ -17,13 +17,14 @@ This Solidity program is a simple program to check if one is eligible for a scol
 
 **Events** <br />
 1. event marksChanged(uint256 currentMarks): Logs the new marks whenever they are updated.<br />
-## **Modifiers** <br />
+
+**Modifiers** <br />
 1. modifier onlyOwner(): Restricts function access to the contract owner.<br />
-<br />
-## Constructor<br />
+
+ **Constructor**<br />
 1. constructor(): Sets the deployer of the contract as the owner.<br />
-<br />
-## Functions <br />
+
+**Functions** <br />
 1. CheckMeritScolarship()<br />
 - Checks if the marks are greater than 85 to be eligible for merit.<br />
 - Updates the marks variable and emits the marksChanged event.<br />
