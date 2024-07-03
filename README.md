@@ -9,28 +9,28 @@ This Solidity program is a simple program to check if one is eligible for a scol
 4. Use events to log changes in marks.<br />
 5. Handle errors and validations with require(), assert(), and revert().<br />
 <br />
-**Public variables**<br />
+**Public variables**
 1. uint public marks: stores the marks of the student<br />
 2. address public owner: stores the address of the owner<br />
 <br />
-**Events**<br />
+**Events**
 1. event marksChanged(uint256 currentMarks): Logs the new marks whenever they are updated.<br />
-**Modifiers**<br />
+**Modifiers**
 1. modifier onlyOwner(): Restricts function access to the contract owner.<br />
 <br />
-**Constructor**<br />
+**Constructor**
 1. constructor(): Sets the deployer of the contract as the owner.<br />
 <br />
-**Functions**<br />
+**Functions**
 1. CheckMeritScolarship()<br />
 - Checks if the marks are greater than 85 to be eligible for merit.<br />
 - Updates the marks variable and emits the marksChanged event.<br />
 - Restricted to the owner.<br />
-1. CheckSportsScolarship()<br />
+2. CheckSportsScolarship()<br />
 - Checks if the marks are greater than 75 to be eligible for Sports scolarship.<br />
 - Updates the marks variable and emits the marksChanged event.<br />
 - Restricted to the owner.<br />
-1. CheckScolarshipEligibility()<br />
+3. CheckScolarshipEligibility()<br />
 - Checks if the marks are positive.<br />
 - Checks if the marks are less than 60, if it is less than 60 then student is not eligible for any scolarship.<br />
 - Updates the marks variable and emits the marksChanged event.<br />
@@ -40,7 +40,7 @@ This Solidity program is a simple program to check if one is eligible for a scol
 **Getting Started Executing program** <br />
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.<br />
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., error.sol). Copy and paste the following code into the file:<br />
-Error.sol
+[Error.sol](https://github.com/Gorisha2004/Error_handling/blob/main/Error.sol)
 <br />
 
 <br />
