@@ -2,7 +2,7 @@
 This Solidity program is a simple program to check if one is eligible for a scolarship or not. This is done using three error handling functions in smart contracts `revert()`, `require()` and `assert()`.<br />
 
 # Description
-<br />
+
 **Features**
 <br />
 1. Checks if a student is eligible for merit based, sports or any of the scolarship.<br />
