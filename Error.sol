@@ -1,48 +1,42 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract CarSpeedChecker {
-    uint public speed;
+contract Eligible {
+    uint public marks;
     address public owner;
 
-    // Event to log speed changes
-    event SpeedChanged(uint newSpeed);
+    event MarksChanged(uint256 newMarks);
 
-    // Event to log when a speed check fails
-    event SpeedCheckFailed(string message);
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Not the contract owner");
-        _;
-    }
-
-    constructor(){
+    constructor() {
         owner = msg.sender;
     }
 
-    // Function using require to check if the speed of car is less than 100
-    function checkUsingRequire(uint _speed) public pure returns (string memory) {       
-        require(_speed < 100, "You must slow down.");
-        return "Keep going";
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Caller is not the owner");
+        _;
+    }
+    //function to check eligibility for merit scolarship
+    function checkMeritScholarship(uint256 currentMarks) external onlyOwner returns(string memory){
+        require(currentMarks > 85, "Not eligible for merit-based scholarship.");
+        marks = currentMarks;
+        emit MarksChanged(currentMarks);
+        return "ELIGIBLE";
     }
 
-    // Function using revert to check if the speed of the car is greater than 100
-    function checkUsingRevert(uint _speed) public pure returns (string memory) {        
-        if (_speed > 100) {
-            revert("You must slow down.");
-        }
-        return "Keep going";
+    //function to check eligibility for sports scolarship
+    function checkSportsScholarship(uint256 currentMarks) external onlyOwner returns(string memory) {
+        require(currentMarks > 75, "Not eligible for sports-based scholarship.");
+        marks = currentMarks;
+        emit MarksChanged(currentMarks);
+        return "ELIGIBLE";
     }
 
-    // Function to set the speed and using assert to check internal invariants
-    function setSpeed(uint _speed) public onlyOwner {                
-        speed = _speed;
-        emit SpeedChanged(speed);
-
-        // Assert that speed is less than 100
-        if (speed >= 100) {
-            emit SpeedCheckFailed("Speed is not less than 100.");
+    function checkScholarshipEligibility(uint256 currentMarks) external onlyOwner {
+        assert(marks>=0);  //this condiion should be true
+        if (currentMarks <= 60) {
+            revert("Not eligible for any scholarships.");
         }
-        assert(speed < 100);
+        marks = currentMarks;
+        emit MarksChanged(currentMarks);
     }
 }
