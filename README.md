@@ -3,20 +3,20 @@ This Solidity program is a simple program to check if one is eligible for a scol
 
 # Description
 <br />
-# Features
+**Features**<br />
 1. Checks if a student is eligible for merit based, sports or any of the scolarship.<br />
 2. Restrict access to the owner using a modifier.<br />
 3. Checks if marks are not negative.<br />
 4. Use events to log changes in marks.<br />
 5. Handle errors and validations with require(), assert(), and revert().<br />
 <br />
-# Public variables <br />
+_**Public variables**_ <br />
 1. uint public marks: stores the marks of the student<br />
 2. address public owner: stores the address of the owner<br />
 <br />
-# Events<br />
+_**Events**_ <br />
 1. event marksChanged(uint256 currentMarks): Logs the new marks whenever they are updated.<br />
-# Modifiers<br />
+_**Modifiers** _<br />
 1. modifier onlyOwner(): Restricts function access to the contract owner.<br />
 <br />
 # Constructor<br />
