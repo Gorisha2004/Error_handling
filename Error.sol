@@ -1,27 +1,38 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract MyContract {
-    uint public num;
+contract CarSpeedChecker {
+    uint public speed;
 
-    function checkUsingRequire(uint _i) public pure returns (bool) {       // Function using require to check if the number is divisible by 2
-        require(_i % 2 == 0, "Number must be divisible by 2");
-        return true;
+    // Event to log speed changes
+    event SpeedChanged(uint newSpeed);
+
+    // Event to log when a speed check fails
+    event SpeedCheckFailed(string message);
+
+    // Function using require to check if the speed of car is less than 100
+    function checkUsingRequire(uint _speed) public pure returns (string memory) {       
+        require(_speed < 100, "You must slow down.");
+        return "Keep going";
     }
 
-
-    function checkUsingRevert(uint _i) public pure returns (bool) {        // Function using revert to check if the number is divisible by 2
-        if (_i % 2 != 0) {
-            revert("Number must be divisible by 2");
+    // Function using revert to check if the speed of the car is greater than 100
+    function checkUsingRevert(uint _speed) public pure returns (string memory) {        
+        if (_speed > 100) {
+            revert("You must slow down.");
         }
-        return true;
+        return "Keep going";
     }
 
-   
- function setNum(uint _num) public {                // Function using assert to check internal invariants
-        num = _num;
-        
-        assert(num % 2 == 0);
-    }
+    // Function to set the speed and using assert to check internal invariants
+    function setSpeed(uint _speed) public {                
+        speed = _speed;
+        emit SpeedChanged(speed);
 
+        // Assert that speed is less than 100
+        if (speed >= 100) {
+            emit SpeedCheckFailed("Speed is not less than 100.");
+        }
+        assert(speed < 100);
+    }
 }
