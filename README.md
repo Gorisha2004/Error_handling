@@ -42,7 +42,8 @@ This Solidity program is a simple program to check if one is eligible for a scol
 - Restricted to the owner.<br />
 <br />
 
-**Getting Started Executing program** <br />
+**Getting Started** <br />
+# Executing program <br />
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.<br />
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., error.sol). Copy and paste the following code into the file:<br />
 [Error.sol](https://github.com/Gorisha2004/Error_handling/blob/main/Error.sol)
